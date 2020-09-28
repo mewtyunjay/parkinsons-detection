@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>parkinson's</title>
+    <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic-ext,cyrillic,latin-ext,vietnamese">
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap/css/bootstrap.min.css') }}">
+
+</head>
+
+<body>
+    <section id="hero">
+        <nav class="navbar navbar-light navbar-expand-md">
+            <div class="container-fluid"><a class="navbar-brand" href="#" style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;">parkinson's prediction</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+            </div>
+            </div>
+        </nav>
+        <h1 id="subtitle" style="font-weight: 300;text-align: center;margin: -2px;padding: 75px;">Quickly predict if a person is suffering from Parkinson's Disease before the onset of motor symptoms by entering their vocal features</h1>
+        <div style="height: 80px;"></div><iframe class="border rounded-0 border-info" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/ckn9zybpYZ8" width="560" height="315" style="height: 333px;width: 595px;"></iframe></section>
+    <section id="predict-form">
+        <div>
+            <form action="{{ url_for('predict')}}" method="POST">
+
+                <h3>Vocal Fundamental Frequency</h3>
+
+                <label for="MDVP:Fo(Hz)">Average :</label>
+                <input id="MDVP:Fo(Hz)" name="MDVP:Fo(Hz)" type="float">
+
+                <label for="MDVP:Fhi(Hz)">Maximum: </label>
+                <input id="MDVP:Fhi(Hz)" name="MDVP:Fhi(Hz)" type="float">
+
+                <label for="MDVP:Flo(Hz)">Minimum: </label>
+                <input id="MDVP:Flo(Hz)" name="MDVP:Flo(Hz)" type="float">
+
+
+                <br><br>
+                <h3>Variation in fundamental frequency</h3>
+
+                <label for="MDVP:Jitter(%)">Jitter(%) :</label>
+                <input id="MDVP:Jitter(%)" name="MDVP:Jitter(%)" type="float">
+
+                <label for="MDVP:Jitter(Abs)">Jitter(Abs): </label>
+                <input id="MDVP:Jitter(Abs)" name="MDVP:Jitter(Abs)" type="float">
+
+                <label for="MDVP:RAP">RAP: </label>
+                <input id="MDVP:RAP" name="MDVP:RAP" type="float">
+
+                <label for="MDVP:PPQ">PPQ: </label>
+                <input id="MDVP:PPQ" name="MDVP:PPQ" type="float">
+
+                <label for="Jitter:DDP">Jitter:DDP: </label>
+                <input id="Jitter:DDP" name="Jitter:DDP" type="float">
+
+                <br><br>
+                <h3>Variation in Amplitude</h3>
+
+                <label for="MDVP:Shimmer">MDVP:Shimmer: </label>
+                <input id="MDVP:Shimmer" name="MDVP:Shimmer" type="float">
+
+                <label for="MDVP:Shimmer(dB)">MDVP:Shimmer(dB): </label>
+                <input id="MDVP:Shimmer(dB)" name="MDVP:Shimmer(dB)" type="float">
+
+                <label for="Shimmer:APQ3">Shimmer:APQ3: </label>
+                <input id="Shimmer:APQ3" name="Shimmer:APQ3" type="float">
+                <br>
+                <label for="Shimmer:APQ5">Shimmer:APQ5: </label>
+                <input id="Shimmer:APQ5" name="Shimmer:APQ5" type="float">
+
+                <label for="MDVP:APQ">MDVP:APQ: </label>
+                <input id="MDVP:APQ" name="MDVP:APQ" type="float">
+
+                <label for="Shimmer:DDA">Shimmer:DDA: </label>
+                <input id="Shimmer:DDA" name="Shimmer:DDA" type="float">
+
+                <br><br>
+                <h3>Ratio of Noise to Tonal Components in the voice</h3>
+
+                <label for="NHR">NHR: </label>
+                <input id="NHR" name="NHR" type="float">
+
+                <label for="HNR">HNR: </label>
+                <input id="HNR" name="HNR" type="float">
+
+                <br><br>
+                <h3>Nonlinear Dynamical Complexity Measures</h3>
+
+                <label for="RPDE">RPDE: </label>
+                <input id="RPDE" name="RPDE" type="float">
+
+                <label for="D2">D2: </label>
+                <input id="D2" name="D2" type="float">
+
+                <br><br>
+                <h3>Signal fractal scaling exponent</h3>
+
+                <label for="DFA">DFA: </label>
+                <input id="DFA" name="DFA" type="float">
+
+                <br><br>
+                <h3>Nonlinear Measures of Fundamental Frequency Variation</h3>
+
+                <label for="spread1">spread1: </label>
+                <input id="spread1" name="spread1" type="float">
+
+                <label for="spread2">spread2: </label>
+                <input id="spread2" name="spread2" type="float">
+
+                <label for="PPE">PPE: </label>
+                <input id="PPE" name="PPE" type="float">
+
+                <br><br>
+                <button id="sub" class="btn btn-primary" type="submit ">Predict
+                </button>
+                <br>
+            </form>
+
+            <br><br><h3>{{ prediction_text }}<h3>
+
+        </div>
+    </section>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+body {
+  background-color: grey;
+}
+
+
+
+.input{
+  border-radius: 14px;
+  height: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+#navcol-1 {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+}
+
+.navbar.navbar-light.navbar-expand-md {
+  text-transform: uppercase;
+  background: #000000;
+}
+
+.h1, h1 {
+  color: #ffffff;
+  background: #333131;
+}
+
+#title {
+  font-weight: 200;
+  text-align: center;
+  width: 1201px;
+  height: 67px;
+}
+
+#form {
+  width: 1000px;
+  padding-left: 594px;
+  text-align: center;
+}
+
+#predict-form {
+  text-align: center;
+}
+
+#sub {
+            width: 90px;
+            height: 43px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
