@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import jsonify
+import requests
 
 app = Flask(__name__)
 model = pickle.load(open('bgcl_classification_model.pkl', 'rb'))
